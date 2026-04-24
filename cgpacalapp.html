@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CGPA Calculator - Engineering Students</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header Section -->
+        <div class="header">
+            <h1>📚 CGPA Calculator</h1>
+            <p class="subtitle">Calculate your Cumulative Grade Point Average</p>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <div class="calculator-section">
+                <!-- Student Details Section -->
+                <div class="student-details-section">
+                    <h2>👤 Student Information</h2>
+                    <div class="student-form">
+                        <div class="form-group">
+                            <label for="studentName">Full Name</label>
+                            <input type="text" id="studentName" placeholder="e.g., John Doe" maxlength="50">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="studentID">Student ID</label>
+                            <input type="text" id="studentID" placeholder="e.g., 2024-001" maxlength="20">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="studentEmail">Email</label>
+                            <input type="email" id="studentEmail" placeholder="e.g., student@university.edu" maxlength="50">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="department">Department</label>
+                            <select id="department">
+                                <option value="">Select Department</option>
+                                <option value="Computer Science">Computer Science</option>
+                                <option value="Electrical Engineering">Electrical Engineering</option>
+                                <option value="Mechanical Engineering">Mechanical Engineering</option>
+                                <option value="Civil Engineering">Civil Engineering</option>
+                                <option value="Chemical Engineering">Chemical Engineering</option>
+                                <option value="Aeronautical Engineering">Aeronautical Engineering</option>
+                                <option value="Biomedical Engineering">Biomedical Engineering</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Grade Scale Info -->
+                <div class="grade-scale-info">
+                    <h3>Grade Scale (0-10)</h3>
+                    <div class="grade-scale">
+                        <div class="grade-item">
+                            <span class="grade-letter">A</span>
+                            <span class="grade-points">10.0</span>
+                        </div>
+                        <div class="grade-item">
+                            <span class="grade-letter">A-</span>
+                            <span class="grade-points">9.0</span>
+                        </div>
+                        <div class="grade-item">
+                            <span class="grade-letter">B+</span>
+                            <span class="grade-points">8.0</span>
+                        </div>
+                        <div class="grade-item">
+                            <span class="grade-letter">B</span>
+                            <span class="grade-points">7.0</span>
+                        </div>
+                        <div class="grade-item">
+                            <span class="grade-letter">B-</span>
+                            <span class="grade-points">6.0</span>
+                        </div>
+                        <div class="grade-item">
+                            <span class="grade-letter">C+</span>
+                            <span class="grade-points">5.0</span>
+                        </div>
+                        <div class="grade-item">
+                            <span class="grade-letter">C</span>
+                            <span class="grade-points">4.0</span>
+                        </div>
+                        <div class="grade-item">
+                            <span class="grade-letter">D</span>
+                            <span class="grade-points">3.0</span>
+                        </div>
+                        <div class="grade-item">
+                            <span class="grade-letter">F</span>
+                            <span class="grade-points">0.0</span>
+                        </div>
+                    </div>
+                    <div class="grade-range">
+                        <p><strong>Grade Range:</strong> 0.0 - 10.0</p>
+                        <p><strong>CGPA Scale:</strong> 0.0 - 10.0</p>
+                    </div>
+                </div>
+
+                <!-- Course Input Section -->
+                <div class="input-section">
+                    <h2>Add Your Courses</h2>
+                    
+                    <div class="course-form">
+                        <div class="form-group">
+                            <label for="semester">Semester</label>
+                            <select id="semester">
+                                <option value="">Select Semester</option>
+                                <option value="Semester 1">Semester 1</option>
+                                <option value="Semester 2">Semester 2</option>
+                                <option value="Semester 3">Semester 3</option>
+                                <option value="Semester 4">Semester 4</option>
+                                <option value="Semester 5">Semester 5</option>
+                                <option value="Semester 6">Semester 6</option>
+                                <option value="Semester 7">Semester 7</option>
+                                <option value="Semester 8">Semester 8</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="courseName">Course Name / Code</label>
+                            <input type="text" id="courseName" placeholder="e.g., CS 201, Physics II" maxlength="50">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="creditHours">Credit Hours</label>
+                            <input type="number" id="creditHours" placeholder="e.g., 3" min="0" max="10" step="0.5">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="grade">Grade (0-10)</label>
+                            <select id="grade">
+                                <option value="">Select a grade</option>
+                                <optgroup label="Letter Grades">
+                                    <option value="10.0">A (10.0)</option>
+                                    <option value="9.0">A- (9.0)</option>
+                                    <option value="8.0">B+ (8.0)</option>
+                                    <option value="7.0">B (7.0)</option>
+                                    <option value="6.0">B- (6.0)</option>
+                                    <option value="5.0">C+ (5.0)</option>
+                                    <option value="4.0">C (4.0)</option>
+                                    <option value="3.0">D (3.0)</option>
+                                    <option value="0.0">F (0.0)</option>
+                                </optgroup>
+                                <optgroup label="Numerical Grades">
+                                    <option value="10.0">10.0</option>
+                                    <option value="9.5">9.5</option>
+                                    <option value="9.0">9.0</option>
+                                    <option value="8.5">8.5</option>
+                                    <option value="8.0">8.0</option>
+                                    <option value="7.5">7.5</option>
+                                    <option value="7.0">7.0</option>
+                                    <option value="6.5">6.5</option>
+                                    <option value="6.0">6.0</option>
+                                    <option value="5.5">5.5</option>
+                                    <option value="5.0">5.0</option>
+                                    <option value="4.5">4.5</option>
+                                    <option value="4.0">4.0</option>
+                                    <option value="3.5">3.5</option>
+                                    <option value="3.0">3.0</option>
+                                    <option value="2.5">2.5</option>
+                                    <option value="2.0">2.0</option>
+                                    <option value="1.5">1.5</option>
+                                    <option value="1.0">1.0</option>
+                                    <option value="0.5">0.5</option>
+                                    <option value="0.0">0.0</option>
+                                </optgroup>
+                            </select>
+                        </div>
+
+                        <button class="btn-add" onclick="addCourse()">+ Add Course</button>
+                    </div>
+                </div>
+
+                <!-- Courses Table -->
+                <div class="courses-table-section">
+                    <h2>Your Courses</h2>
+                    <div class="table-wrapper">
+                        <table class="courses-table" id="coursesTable">
+                            <thead>
+                                <tr>
+                                    <th>Semester</th>
+                                    <th>Course</th>
+                                    <th>Credit Hours</th>
+                                    <th>Grade</th>
+                                    <th>Grade Points</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody id="coursesTableBody">
+                                <!-- Courses will be added here -->
+                            </tbody>
+                        </table>
+                        <div id="emptyState" class="empty-state">
+                            <p>No courses added yet. Add your first course to get started!</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Results Section -->
+                <div class="results-section">
+                    <div class="student-display" id="studentDisplay" style="display: none;">
+                        <h3>Student Profile</h3>
+                        <p><strong>Name:</strong> <span id="displayName">-</span></p>
+                        <p><strong>ID:</strong> <span id="displayID">-</span></p>
+                        <p><strong>Email:</strong> <span id="displayEmail">-</span></p>
+                        <p><strong>Department:</strong> <span id="displayDept">-</span></p>
+                    </div>
+
+                    <!-- SGPA by Semester Section -->
+                    <div class="sgpa-section" id="sgpaSection" style="display: none;">
+                        <h3>📅 SGPA by Semester</h3>
+                        <div class="sgpa-cards" id="sgpaCards">
+                            <!-- SGPA cards will be added here -->
+                        </div>
+                    </div>
+                    
+                    <div class="results-card">
+                        <div class="result-item result-obtained">
+                            <h3>📊 Obtained CGPA</h3>
+                            <p class="result-value" id="cgpaValue">0.00</p>
+                        </div>
+                        <div class="result-item result-total">
+                            <h3>🎯 Total CGPA (Max)</h3>
+                            <p class="result-value" id="totalCGPA">0.00</p>
+                        </div>
+                        <div class="result-item result-info">
+                            <h3>Total Credits</h3>
+                            <p class="result-value" id="totalCreditsValue">0.00</p>
+                        </div>
+                    </div>
+
+                    <div class="cgpa-progress">
+                        <div class="progress-label">
+                            <span>Progress</span>
+                            <span id="progressPercent">0%</span>
+                        </div>
+                        <div class="progress-bar-container">
+                            <div class="progress-bar-fill" id="progressBar"></div>
+                        </div>
+                    </div>
+
+                    <button class="btn-calculate" onclick="calculateCGPA()">Calculate CGPA</button>
+                    <button class="btn-reset" onclick="resetCalculator()">Reset All</button>
+                </div>
+            </div>
+
+            <!-- Tips Section -->
+            <div class="tips-section">
+                <h3>💡 Tips</h3>
+                <ul>
+                    <li>CGPA = Total Grade Points / Total Credit Hours</li>
+                    <li>Grade points = Grade × Credit Hours</li>
+                    <li>Include all completed courses for accurate calculation</li>
+                    <li>Standard 0-10 grading scale is used</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p>© 2026 CGPA Calculator | Designed for Engineering Students</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
